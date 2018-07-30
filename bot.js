@@ -279,7 +279,7 @@ bot.on('guildDelete', guild => {
 });
 
 bot.on("guildCreate", guild => {
-    const liveJoin = bot.channels.get("462111128114298890"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
+    const liveJoin = bot.channels.get("472733185323696128"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
     let liveJEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.avatarURL)
     .setTitle(`Your Bot Has Started Serving A Guild`)
@@ -290,7 +290,7 @@ bot.on("guildCreate", guild => {
     })
  });
  bot.on("guildDelete", guild => {
-    const liveLeave = bot.channels.get("462111128114298890"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
+    const liveLeave = bot.channels.get("472733185323696128"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
     let liveLEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.avatarURL)
     .setTitle(`Your Bot Has Stopped Serving A Guild`)
