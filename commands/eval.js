@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, color, prefix) => {
-    if (message.author.id !== '444454206800396309' && message.author.id !== '444454206800396309') {
+    if (message.author.id !== '335035386923581440' && message.author.id !== '465810389993783307') {
    message.reply("Only My Owner Can Use This")
  } else {
      try {
