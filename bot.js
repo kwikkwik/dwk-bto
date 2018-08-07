@@ -142,7 +142,7 @@ bot.on("message", async message => {
       .setDescription("Bot Info:")
       .setColor('#00d303')
       .addField("<a:bottag:476338247891419136> Bot Name", `${bot.user.tag}`)
-      .addField("👑 Creator", "<@!335035386923581440> | _Brickmaster_#0218")
+      .addField("👑 Creator", "<@!335035386923581440> | `_Brickmaster_#0218`")
       .addField("🗓️ Created At", `${bot.user.createdAt}`)
       .addField('<:js:476338247891419136> Node', `${process.version}`)
       .addField('<:js:476338247891419136> Library', 'discord.js')
