@@ -17,7 +17,7 @@ exports.run = (bot, message, args, func) => {
 
     // Update Channel
     db.set(`messageChannel_${message.guild.id}`, newChannel).then(i => {
-        message.channel.send(`**Successfully updated logging channel to ${message.mentions.channels.first()}**`)) // Finally, send in chat that they updated the channel.
+        message.channel.send(`**Successfully updated logging channel to ${message.mentions.channels.first()}**`) // Finally, send in chat that they updated the channel.
     })
 
 } // Lets set the DM channel now, we can use this code we just wrote as a template.
