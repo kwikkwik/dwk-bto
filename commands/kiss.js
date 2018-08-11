@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
 
     // RESULTS
     const embed = new Discord.RichEmbed()
-        .setTitle("Minasaki - Kiss")
+        .setTitle("Kiss")
         .setDescription(description)
         .setImage(body.url)
         .setColor("RANDOM")
