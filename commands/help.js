@@ -13,7 +13,7 @@ let embed = new Discord.RichEmbed()
 .setFooter('© DwKBot');
 message.author.send(embed);
 
-message.channel.send(`${message.author}, 📬 Sending help to your DM! If you don't have any Dm's from me please do ${PREFIX}helphere`);
+message.channel.send(`${message.author}, 📬 Sending help to your DM!`);
 
  }; 
 
