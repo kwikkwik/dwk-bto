@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args) => {
     // RESULTS
     
     var embed = new Discord.RichEmbed()
-        .setAuthor("Minasaki - Hug")
+        .setAuthor("DwK Bot - Hug")
         .setDescription(`${description}`)
         .setImage(body.url)
         .setColor("RANDOM")
