@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   }
 
   // Push To Database
-  await db.push('changelog', {
+  await db.push('log', {
     entry: entry,
     timestamp: timestamp
   });
