@@ -14,7 +14,7 @@ module.exports.run = (client, message, args, tools) => {
   
    const embed = new Discord.RichEmbed();
     embed.setColor('RANDOM')
-    embed.addField('Minasaki has been online for:', `**${days}** Days, **${hours}** Hours, **${mins}** Minutes And **${realTotalSecs}** Seconds!`)
+    embed.addField('DwKBot has been online for:', `**${days}** Days, **${hours}** Hours, **${mins}** Minutes And **${realTotalSecs}** Seconds!`)
   message.channel.send(embed);
   
 }
