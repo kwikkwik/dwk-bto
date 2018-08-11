@@ -19,7 +19,7 @@ exports.run = (bot, message, args, func) => {
 
     // This will update the .text of the joinMessageDM_guildID object.
     db.set(`leaveMessage_${message.guild.id}`, newMessage).then(i => {
-        func.embed(message.channel, `**Successfully updated welcome text to:**\n > *${args.join(" ").trim()}*`) // Finally, send in chat that they updated the channel.
+        message.channel.send(`**Successfully updated welcome text to:**\n > *${args.join(" ").trim()}*`) // Finally, send in chat that they updated the channel.
     })
 
 }
