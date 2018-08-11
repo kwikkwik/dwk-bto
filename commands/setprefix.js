@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const DEFAULTPREFIX = "mn!";
+const DEFAULTPREFIX = "d!!";
 const fs = require("fs")
 module.exports.run = async (bot, message, args, PREFIX) => {
            var newprefix = args.join(" ")
