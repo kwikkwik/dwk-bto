@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
       return message.reply("Sorry, you don't have permissions to use this!");
   
   let nickname = args.join(' ')
-  message.guild.members.get('452360666020577281')
+  message.guild.members.get('473444210914099204')
   	.setNickname(nickname);
   await message.channel.send({
   	embed: new Discord.RichEmbed()
