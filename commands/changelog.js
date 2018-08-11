@@ -32,7 +32,7 @@ function parseTime(milliseconds) {
 module.exports.run = async (bot, message, args, ops, tools) => {
 
   // Fetch Changelog Entries
-  let entries = await db.fetch('changelog');
+  let entries = await db.fetch('log');
 
   // Create Embed
   const embed = new Discord.RichEmbed()
