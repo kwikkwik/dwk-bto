@@ -34,9 +34,9 @@ const mentionHook = new Discord.WebhookClient("-", "-");
 const func = require('./functions.js');
 // Bot Stats
 const botStats = {
-  totalGuildsID: '473439256568922122',
-  totalUsersID: '473439307328126997',
-  totalChannelsID: '473439356452077570'
+  totalGuildsID: '475113426335825971',
+  totalUsersID: '477810801512808448',
+  totalChannelsID: '477810837034106891'
 }
 
 fs.readdir("./events/", (err, files) => {
