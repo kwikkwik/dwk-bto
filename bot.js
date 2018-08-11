@@ -136,20 +136,20 @@ bot.on("message", async message => {
     message.channel.send(esayEmbed);
   }
 
-  if (command == "botinfo") {
+  if (command == "botinfodwk") {
     let bicon = bot.user.displayAvatarURL;
     let helpmember = new Discord.RichEmbed()
       .setDescription("Bot Info:")
       .setColor('#00d303')
-      .addField("<a:bottag:476338247891419136> Bot Name", `${bot.user.tag}`)
-      .addField("👑 Creator", "<@!335035386923581440> | `_Brickmaster_#0218`")
-      .addField("🗓️ Created At", `${bot.user.createdAt}`)
-      .addField('<:js:476338247891419136> Node', `${process.version}`)
-      .addField('<:js:476338247891419136> Library', 'discord.js')
-      .addField('💻 Operating System', `${os.platform} ${arch}`)
-      .addField(`💬 Want to see last update ${bot.user.username}?`, `Usage \`${PREFIX}changelog\``)
-      .addField(`💬 Found any bug?`, `Usage \`${PREFIX}bug <specify a bug>\``)
-      .addField("📑 **Usefull link**", "[Invite me](https://discordapp.com/oauth2/authorize?client_id=452360666020577281&scope=bot&permissions=2012593399) | [Vote me](https://discordbots.org/bot/452360666020577281/vote) | [Support Server](https://discord.gg/kDAYc8M)") 
+      .addField("Bot Name", `${bot.user.tag}`)
+      .addField("Creator", "<@!335035386923581440> | `_Brickmaster_#0218`")
+      .addField("Created At", `${bot.user.createdAt}`)
+      .addField('Node', `${process.version}`)
+      .addField('Library', 'discord.js')
+      .addField('Operating System', `${os.platform} ${arch}`)
+      .addField(`Want to see last update ${bot.user.username}?`, `Usage \`${PREFIX}changelog\``)
+      .addField(`Found any bug?`, `Usage \`${PREFIX}bug <specify a bug>\``)
+      .addField("**Usefull link**", "[Invite me](https://discordapp.com/oauth2/authorize?client_id=452360666020577281&scope=bot&permissions=2012593399) | [Vote me](https://discordbots.org/bot/452360666020577281/vote) | [Support Server](https://discord.gg/kDAYc8M)") 
       .setThumbnail(bicon)
       .setFooter(`Requested by: ${message.author.tag}`)
     message.channel.send(helpmember);
@@ -285,8 +285,8 @@ bot.on("guildCreate", guild => {
     .setTitle(`Your Bot Has Started Serving A Guild`)
     .setDescription(`**Guild Name**: ${guild.name}\n**Guild ID**: ${guild.id}\n**Members Gained**: ${guild.memberCount}`)
     send(liveJoin, liveJEmbed, {
-        name: `Minasaki Life Support`,
-        icon: `https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/search-512.png`
+        name: `DwKBot Life Support`,
+        icon: `https://cdn.discordapp.com/avatars/473444210914099204/1005d4cea564831a95103912e8c3e87e.png?size=2048`
     })
  });
  bot.on("guildDelete", guild => {
@@ -296,8 +296,8 @@ bot.on("guildCreate", guild => {
     .setTitle(`Your Bot Has Stopped Serving A Guild`)
     .setDescription(`**Guild Name**: ${guild.name}\n**Guild ID**: ${guild.id}\n**Members Lost**: ${guild.memberCount}`)
     send(liveLeave, liveLEmbed, {
-        name: `Minasaki Life Support`,
-        icon: `https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/search-512.png`
+        name: `DwKBot Life Support`,
+        icon: `https://cdn.discordapp.com/avatars/473444210914099204/1005d4cea564831a95103912e8c3e87e.png?size=2048`
     })
  });
 
