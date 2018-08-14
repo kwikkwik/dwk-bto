@@ -115,7 +115,7 @@ bot.on("message", async message => {
 
   
   if (command == "esay") {
-    if (!message.member.roles.some(r => ["Owner", "Admin", "Moderator", "CoLeader", "Mod"].includes(r.name)))
+    if (!message.member.roles.some(r => ["Owner", "Admin", "Moderator", "CoLeader", "Mod", "[iHH.CTeam]"].includes(r.name)))
       return message.reply("⛔ Sorry, you don't have role named: **Owner/Admin/Mod/Coleader/Moderator** to use this!");
 
     const sayMessage = args.join(" ");
@@ -194,7 +194,7 @@ bot.on("guildMemberRemove", async (member, client, message, args, level) => {
               .setTextAlign('center')
               .setTextFont('30px Arial')
               .addImage(background, 0, 0, 856, 376)
-              .addText("Goodbbye", 260, 325)
+              .addText("Goodbye", 260, 325)
               .addText(`${jadim}#${member.user.discriminator}`, 260, 355)
               .addRoundImage(avatar, 135, 10, 256, 256, 128)
               .toBufferAsync();
@@ -217,7 +217,7 @@ bot.on("guildMemberRemove", async (member, client, message, args, level) => {
     let channel = member.guild.channels.get(`${welcome[member.guild.id].nick}`);
     if (!channel) return;
   
-            channel.send(`**Selamat Tinggal** - **Jangan Lupa untuk bekunjung lagi :* **`)+channel.send(new Discord.Attachment(await createCanvas()));
+            channel.send(`**Goodbye** - **${member} **`)+channel.send(new Discord.Attachment(await createCanvas()));
     }
 });
 bot.on("guildMemberAdd", async (member, client, message, args, level) => {  
@@ -260,7 +260,7 @@ bot.on("guildMemberAdd", async (member, client, message, args, level) => {
     let channel = member.guild.channels.get(`${welcome[member.guild.id].nick}`);
     if (!channel) return;
   
-            channel.send(`**Selamat Datang** ${member} **Di server** \`DISCORD INDONESIA\`\n**Kamu member ke** \`${member.guild.memberCount}\``)+channel.send(new Discord.Attachment(await createCanvas()));
+            channel.send(`**Welcome** ${member} **In** \`${guild.name}\`\n**Now we have** \`${member.guild.memberCount}\` Member`)+channel.send(new Discord.Attachment(await createCanvas()));
     }
 });
 
@@ -279,22 +279,22 @@ bot.on('guildDelete', guild => {
 });
 
 bot.on("guildCreate", guild => {
-    const liveJoin = bot.channels.get("475106366248452107"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
+    const liveJoin = bot.channels.get("478861793326792715"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
     let liveJEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.avatarURL)
     .setTitle(`Your Bot Has Started Serving A Guild`)
-    .setDescription(`**Guild Name**: ${guild.name}\n**Guild ID**: ${guild.id}\n**Members Gained**: ${guild.memberCount}`)
+    .setDescription(`**Guild Name**: ${guild.name}\n**Guild ID**: ${guild.id}\n**Guild Owner**: ${guild.owner}**Members Gained**: ${guild.memberCount}`)
     send(liveJoin, liveJEmbed, {
         name: `DwKBot Life Support`,
         icon: `https://cdn.discordapp.com/avatars/473444210914099204/1005d4cea564831a95103912e8c3e87e.png?size=2048`
     })
  });
  bot.on("guildDelete", guild => {
-    const liveLeave = bot.channels.get("475106394073333762"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
+    const liveLeave = bot.channels.get("478861813715304448"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
     let liveLEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.avatarURL)
     .setTitle(`Your Bot Has Stopped Serving A Guild`)
-    .setDescription(`**Guild Name**: ${guild.name}\n**Guild ID**: ${guild.id}\n**Members Lost**: ${guild.memberCount}`)
+    .setDescription(`**Guild Name**: ${guild.name}\n**Guild ID**: ${guild.id}\n**Guild Owner**: ${guild.owner}\n**Members Lost**: ${guild.memberCount}`)
     send(liveLeave, liveLEmbed, {
         name: `DwKBot Life Support`,
         icon: `https://cdn.discordapp.com/avatars/473444210914099204/1005d4cea564831a95103912e8c3e87e.png?size=2048`
@@ -321,11 +321,11 @@ bot.on("message", async autoresponder => {
   if (autoresponder.content.startsWith(PREFIX)) return;
 
   if (autoresponder.content === `<@${bot.user.id}>`) {
-    return autoresponder.reply("My prefix is `" + PREFIX + "` \nneed help? type `" + PREFIX + "help`\nSupport Me!\nType `" + PREFIX + "invite` thanks.😊")
+    return autoresponder.reply("My prefix is `" + PREFIX + "` \nneed help? type `" + PREFIX + "help`\nSupport Me!\nType `" + PREFIX + "invite` thanks.")
   }
 
   if (autoresponder.content === `<@!${bot.user.id}>`) {
-    return autoresponder.reply("My prefix is `" + PREFIX + "` \nneed help? type `" + PREFIX + "help`\nSupport Me!\nType `" + PREFIX + "invite` thanks.😊")
+    return autoresponder.reply("My prefix is `" + PREFIX + "` \nneed help? type `" + PREFIX + "help`\nSupport Me!\nType `" + PREFIX + "invite` thanks.")
   }
 
 });
