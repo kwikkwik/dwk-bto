@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
    message.channel.startTyping();
   const image = await neko.getNSFWNeko();
   const embed = new Discord.RichEmbed()
-    .setAuthor("Minasaki -- Neko")
+    .setAuthor("Neko")
     .setColor('RANDOM')
     .setImage(image.url)
     .setFooter(`Powered by: nekos.life`);
