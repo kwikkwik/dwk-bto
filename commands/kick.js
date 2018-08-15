@@ -17,10 +17,10 @@ return;
     if(!kReason) return errors.noReason(message, "channel");
    
     let kickEmbed = new Discord.RichEmbed()
-    .setDescription("~Kick~")
+    .setDescription("**Kick**")
     .setColor("#e56b00")
-    .addField("<:Rip:462908343938318346> Kicked User", `${kUser} with ID ${kUser.id}`)
-    .addField("<:buhbye:261291850105749514> Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("<:rip:465236219463204874> Kicked User", `${kUser} with ID ${kUser.id}`)
+    .addField("<:bye:465236219463204874> Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Kicked In", message.channel)
     .addField("🗓️ Time", message.createdAt)
     .addField("📓 Reason", kReason);
