@@ -126,7 +126,7 @@ bot.on("message", async message => {
       .setColor("#00d303")
       .setThumbnail(servIcon)
       .setDescription(`📝 Said by ${message.author}`)
-      .addField("Message", `${sayMessage}`)
+      .addField("Message", `${sayMessage}`, true)
       .setTimestamp();
 
     const esayMessage = args.join(" ");
@@ -149,7 +149,7 @@ bot.on("message", async message => {
       .addField('Operating System', `${os.platform} ${arch}`)
       .addField(`Want to see last update ${bot.user.username}?`, `Usage \`${PREFIX}changelog\``)
       .addField(`Found any bug?`, `Usage \`${PREFIX}bug <specify a bug>\``)
-      .addField("**Usefull link**", "[Invite me](https://discordapp.com/oauth2/authorize?client_id=452360666020577281&scope=bot&permissions=2012593399) | [Vote me](https://discordbots.org/bot/452360666020577281/vote) | [Support Server](https://discord.gg/kDAYc8M)") 
+      .addField("**Usefull link**", "[Invite me](https://discordapp.com/oauth2/authorize?client_id=473444210914099204&scope=bot&permissions=2146958591)") 
       .setThumbnail(bicon)
       .setFooter(`Requested by: ${message.author.tag}`)
     message.channel.send(helpmember);
@@ -167,9 +167,9 @@ bot.on("message", async message => {
       .addField('👥 Total Members', `**${message.guild.memberCount}**`, true)
       .addField('🙇🏻 Humans', `**${message.guild.members.filter(member => !member.user.bot).size}**`, true)
       .addField('🤖 Bots', `**${message.guild.members.filter(member => member.user.bot).size}**`, true)
-      .addField('📜 Member Status', `**${message.guild.members.filter(o => o.presence.status === 'online').size}**<:online:449590947165110283> Online\n**${message.guild.members.filter(i => i.presence.status === 'idle').size}**<:away:449590947110584321> Idle/Away\n**${message.guild.members.filter(dnd => dnd.presence.status === 'dnd').size}**<:dnd:449590946879766539> Do Not Disturb\n**${message.guild.members.filter(off => off.presence.status === 'offline').size}**<:offline:449590947047669760> Offline/Invisible`)
+      .addField('📜 Member Status', `**${message.guild.members.filter(o => o.presence.status === 'online').size}**<:online:465236219463204874> Online\n**${message.guild.members.filter(i => i.presence.status === 'idle').size}**<:idle:465236219463204874> Idle/Away\n**${message.guild.members.filter(dnd => dnd.presence.status === 'dnd').size}**<:dnd:465236219463204874> Do Not Disturb\n**${message.guild.members.filter(off => off.presence.status === 'offline').size}**<:offline:465236219463204874> Offline/Invisible`)
       .addField("🗓️ You Joined", message.member.joinedAt)
-      .addField('📍 Your Current Roles', `${message.member.roles.map(roles => roles).join(' => ')}`) 
+      .addField('📍 Your Current Roles', `${message.member.roles.map(roles => roles).join(' > ')}`) 
       .addField('📌 Guild Current Roles', `${message.guild.roles.map(roles => roles).join('  ')}`) 
       .setTimestamp()
       .setFooter(`Requested by: ${message.author.tag}`)
