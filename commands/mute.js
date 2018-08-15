@@ -10,7 +10,7 @@ return;
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if (!tomute) return errors.cantfindUser(message);
     if (tomute.hasPermission("MANAGE_MESSAGES")) return errors.equalPerms(message);
-    let muterole = message.guild.roles.find(`name`, "Muted");
+    let muterole = message.guild.roles.find(`name`, "DwK-Muted");
 
     if (!muterole) {
         try {
