@@ -9,9 +9,9 @@ var option = args.slice(0).join(" ")
               .setColor("#ec0000")
               .setDescription(`
 **COMMAND:**
-- \`mn!welcome set #channel\`
-- \`mn!welcome on\`
-- \`mn!welcome off\`
+- \`d#welcome set #channel\`
+- \`d#welcome on\`
+- \`d#welcome off\`
 
 `)
               .setFooter("welcome", bot.user.displayAvatarURL)
