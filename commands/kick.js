@@ -19,11 +19,11 @@ return;
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("**Kick**")
     .setColor("#e56b00")
-    .addField("<:rip:465236219463204874> Kicked User", `${kUser} with ID ${kUser.id}`)
-    .addField("<:bye:465236219463204874> Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
+    .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Kicked In", message.channel)
-    .addField("🗓️ Time", message.createdAt)
-    .addField("📓 Reason", kReason);
+    .addField("Time", message.createdAt)
+    .addField("Reason", kReason);
 
     let kickChannel = message.guild.channels.find(`name`, "mod-logs");
     if(!kickChannel) return message.channel.send("Can't find mod-logs channel.");
