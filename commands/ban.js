@@ -13,11 +13,11 @@ return;
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
     if(!bReason) return errors.noReason(message);
     let banEmbed = new Discord.RichEmbed()
-    .setDescription("~Ban~")
+    .setDescription("**Ban**")
     .setColor("#bc0000")
-    .addField("<:Rip:462908343938318346> Banned User", `${bUser} with ID ${bUser.id}`)
-    .addField("<:BanHammer:446920411414921217> Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("<:buhbye:261291850105749514> Banned In", message.channel)
+    .addField("<:rip:465236219463204874> Banned User", `${bUser} with ID ${bUser.id}`)
+    .addField("<:BanHammer:465236219463204874> Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("<:bye:465236219463204874> Banned In", message.channel)
     .addField("🗓️Time", message.createdAt)
     .addField("📓Reason", bReason);
 
