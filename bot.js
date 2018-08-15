@@ -167,7 +167,7 @@ bot.on("message", async message => {
       .addField('👥 Total Members', `**${message.guild.memberCount}**`, true)
       .addField('🙇🏻 Humans', `**${message.guild.members.filter(member => !member.user.bot).size}**`, true)
       .addField('🤖 Bots', `**${message.guild.members.filter(member => member.user.bot).size}**`, true)
-      .addField('📜 Member Status', `**${message.guild.members.filter(o => o.presence.status === 'online').size}**<:online:465236219463204874> Online\n**${message.guild.members.filter(i => i.presence.status === 'idle').size}**<:idle:465236219463204874> Idle/Away\n**${message.guild.members.filter(dnd => dnd.presence.status === 'dnd').size}**<:dnd:465236219463204874> Do Not Disturb\n**${message.guild.members.filter(off => off.presence.status === 'offline').size}**<:offline:465236219463204874> Offline/Invisible`)
+      .addField('📜 Member Status', `**${message.guild.members.filter(o => o.presence.status === 'online').size}** Online\n**${message.guild.members.filter(i => i.presence.status === 'idle').size}** Idle/Away\n**${message.guild.members.filter(dnd => dnd.presence.status === 'dnd').size}** Do Not Disturb\n**${message.guild.members.filter(off => off.presence.status === 'offline').size}** Offline/Invisible`)
       .addField("🗓️ You Joined", message.member.joinedAt)
       .addField('📍 Your Current Roles', `${message.member.roles.map(roles => roles).join(' > ')}`) 
       .addField('📌 Guild Current Roles', `${message.guild.roles.map(roles => roles).join('  ')}`) 
