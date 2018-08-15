@@ -15,11 +15,11 @@ return;
     let banEmbed = new Discord.RichEmbed()
     .setDescription("**Ban**")
     .setColor("#bc0000")
-    .addField("<:rip:465236219463204874> Banned User", `${bUser} with ID ${bUser.id}`)
-    .addField("<:BanHammer:465236219463204874> Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("<:bye:465236219463204874> Banned In", message.channel)
-    .addField("🗓️Time", message.createdAt)
-    .addField("📓Reason", bReason);
+    .addField("Banned User", `${bUser} with ID ${bUser.id}`)
+    .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("Banned In", message.channel)
+    .addField("Time", message.createdAt)
+    .addField("Reason", bReason);
 
     let incidentchannel = message.guild.channels.find(`name`, "mod-logs");
     if(!incidentchannel) return message.channel.send("Can't find mod-logs channel.");
