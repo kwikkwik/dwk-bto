@@ -286,7 +286,7 @@ bot.on("guildCreate", guild => {
     .setDescription(`**Guild Name**: ${guild.name}\n**Guild ID**: ${guild.id}\n**Guild Owner**: ${guild.owner}**Members Gained**: ${guild.memberCount}`)
     send(liveJoin, liveJEmbed, {
         name: `DwKBot Life Support`,
-        icon: `https://cdn.discordapp.com/avatars/473444210914099204/1005d4cea564831a95103912e8c3e87e.png?size=2048`
+        icon: `https://cdn.discordapp.com/avatars/473444210914099204/1005d4cea564831a95103912e8c3e87e.png`
     })
  });
  bot.on("guildDelete", guild => {
@@ -297,7 +297,7 @@ bot.on("guildCreate", guild => {
     .setDescription(`**Guild Name**: ${guild.name}\n**Guild ID**: ${guild.id}\n**Guild Owner**: ${guild.owner}\n**Members Lost**: ${guild.memberCount}`)
     send(liveLeave, liveLEmbed, {
         name: `DwKBot Life Support`,
-        icon: `https://cdn.discordapp.com/avatars/473444210914099204/1005d4cea564831a95103912e8c3e87e.png?size=2048`
+        icon: `https://cdn.discordapp.com/avatars/473444210914099204/1005d4cea564831a95103912e8c3e87e.png`
     })
  });
 
