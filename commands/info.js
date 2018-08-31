@@ -67,7 +67,7 @@ exports.run = async (client, message, args, tools, map) => {
     setTimeout(() => {
     talkedRecently.delete(message.author.id);
   }, 7000);
-     let postMsg = await msg.channel.send("**Please Wait...**");
+     let postMsg = await message.channel.send("**Please Wait...**");
      const embed = new Discord.RichEmbed()
     .setColor("#06238B")
     .setAuthor(`${client.user.username} | Bot Info`,`https://cdn.discordapp.com/avatars/464511870993432578/30a3f8c3f24bf6c066c4cee279626bb5.png?size=2048`)
