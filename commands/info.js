@@ -25,7 +25,7 @@ exports.run = async (client, message, args, tools, map) => {
     talkedRecently.delete(message.author.id);
   }, 7000);
 if (message.channel.type === 'dm') return;
-  bot.shard.fetchClientValues('guilds.size')
+  client.shard.fetchClientValues('guilds.size')
   .then(results => {
      const embed = new Discord.RichEmbed()
     .setColor("#06238B")
