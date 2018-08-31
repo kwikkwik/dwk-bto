@@ -32,6 +32,33 @@ exports.run = async (client, message, args, tools, map) => {
     if (voiceChannels instanceof Array) {
       voiceChannels = voiceChannels.reduce((sum, val) => sum + val, 0);
     }
+      let shardStats = client.shard ? await client.shard.broadcastEval('this.uptime') : 'None';
+    if (shardStats instanceof Array) {
+      shardStats = shardStats.length === client.shard.count ? 'All shards online' : `Launched ${shardStats.length} / ${client.shard.count} shards`;
+    }
+
+    let uptime = client.shard ? await client.shard.broadcastEval('this.uptime') : client.uptime;
+    if (uptime instanceof Array) {
+      uptime = uptime.reduce((max, cur) => Math.max(max, cur), -Infinity);
+    }
+    let seconds = uptime / 1000;
+    let days = parseInt(seconds / 86400);
+    seconds = seconds % 86400;
+    let hours = parseInt(seconds / 3600);
+    seconds = seconds % 3600;
+    let minutes = parseInt(seconds / 60);
+    seconds = parseInt(seconds % 60);
+
+    uptime = `${seconds}s`;
+    if (days) {
+      uptime = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+    else if (hours) {
+      uptime = `${hours}h ${minutes}m ${seconds}s`;
+    }
+    else if (minutes) {
+      uptime = `${minutes}m ${seconds}s`;
+    }
   
       if (message.channel.type === 'dm') return;
     if (talkedRecently.has(message.author.id))
@@ -53,7 +80,7 @@ if (message.channel.type === 'dm') return;
     .addField("Name", `__**${client.user.username}**__`, true)
     .addField("Developer", "`Brickmaster#2000`", true)
     .addField("Library: ", "discord.js", true)
-    .addField("Shard", `${client.shard.count} Shards`)
+    .addField("Shard", `${client.shard.count} Shards\nShard Stats: ${shardStats}`)
     .addField("General Stats", `Guild: ${guilds}\nUser: ${users}\nVoice Channels: ${voiceChannels}\nText Channels: ${textChannels}`, true)
     .addField("Usage Information", `Ram: ${Math.round(used * 100) / 100}MB\nMemory: ${memory_on_bot} MB\nCPU: ${Math.round(ccpu * 100) / 100}%`, true)
     .addField("Uptime: ", `Days: ${days} | Hours: ${hours} | Minutes: ${mins} | Seconds: ${realTotalSecs}`, true)
