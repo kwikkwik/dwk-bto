@@ -1,29 +1,26 @@
-const Discord = require('discord.js')
-const superagent = require('superagent');
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const meme = require('memejs');
 
-module.exports.run = async (bot, message, args) => {
-  let{body} = await superagent
-  .get(`https://api-to.get-a.life/meme`);
+exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
+  meme(function(data) {
+  const embed = new Discord.RichEmbed()
+  .setTitle(data.title[0])
+  .setColor("#06238B")
+  .setImage(data.url[0])
+  message.channel.send({embed});
+  })};
 
-  let postMsg = await message.channel.send('**🔍Please Wait...**');
-   message.channel.startTyping();
-  let me = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setTitle("lmao!")
-  .setImage(body.url)
-  .setTimestamp() 
-  .setFooter(`Powered by: Meme`);
-  setTimeout(() => {
-        postMsg.edit(me) 
-        }, 2000);
-message.channel.stopTyping(true);
-    }
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ["meme", "memezzzzz"],
+  permLevel: "User"
+};
 
-
-module.exports.help = {
-    name: 'meme', 
-    aliases: ['memer'],
-    ownerOnly: false,
-    description: 'Sends you a meme!',
-    usage: ''
-}
+exports.help = {
+  name: "meme",
+  category: "Miscelaneous",
+  description: "Memezzzz 4 life",
+  usage: "meme"
+};

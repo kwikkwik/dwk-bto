@@ -1,11 +1,10 @@
 const Discord = require("discord.js");
-const bot = new Discord.Client();
+const client = new Discord.Client();
 const request = require("request");
 
-module.exports.run = async (bot, message, args, level) => { // eslint-disable-line no-unused-vars
+exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   let imgs = Math.floor(Math.random() * 80);
   let url = ['https://www.reddit.com/r/Rabbits/.json?sort=rising&t=hour&limit=100'];
-  let bicon = bot.user.displayAvatarURL;
   request({
     method: 'GET',
     uri: url[Math.floor(Math.random() * url.length)]
@@ -24,13 +23,12 @@ module.exports.run = async (bot, message, args, level) => { // eslint-disable-li
   urls[i+1] = url;
     }
   const embed = new Discord.RichEmbed()
-  .setTitle("🐿️ Jump! Jump!")
-  .setColor('RANDOM')
+  .setTitle("Jump!")
+  .setColor(0xC93457)
   .setImage(urls[imgs])
-  .setFooter(`${bot.user.username}: Cute`, `${bicon}`) 
   message.channel.send({embed});
 
-  if(bot.user && message.content === "undefined") {
+  if(client.user && message.content === "undefined") {
       message.delete()
   }})
 };

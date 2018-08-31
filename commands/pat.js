@@ -1,33 +1,26 @@
-const Discord = require('discord.js');
-const nekoclient = require('nekos.life');
-const neko = new nekoclient();
+const Discord = require('discord.js')
 
-module.exports.run = async (bot, message, args) => {
-  if (!args[0]) return message.channel.send("Call or tag someone!")
-  const pat = await neko.getSFWPat();
-  const answers = [
-    `Look at **${args.join(" ")}**!`,
-    `${message.author} and **${args.join(" ")}** looks cute together!`,
-    `Pat pat!`,
-    `There you go, **${args.join(" ")}**`,
-    `**${args.join(" ")}**, ${message.author} just pat you!`
-  ];
-  const katakata = answers[Math.floor(Math.random() * answers.length)];
-  let postMsg = await message.channel.send('**Please Wait...**');
-   message.channel.startTyping();
-  const embed = new Discord.RichEmbed()
-    .setColor("RANDOM") 
-    .setDescription(`${katakata}`)
-    .setImage(pat.url)
-    .setFooter(`Requested by: ${message.author.tag}`);
-  setTimeout(() => {
-        postMsg.edit(embed)
-        }, 2000);
-message.channel.stopTyping(true);
-};
+exports.run = (client, message, args, tools) => {
 
-module.exports.help = { 
-name: "pat", 
-description: "", 
-usage: ""
-} 
+var images = ["https://cdn.discordapp.com/attachments/424667806320033814/437807617965031424/unnamed_1.gif", "https://cdn.glitch.com/5df641e3-8d98-4abb-9045-d5482434003a%2FJake_pat.gif?1524497996034", "https://media.tenor.com/images/cdc004bbbaba6f60d8e62a1f127516e0/tenor.gif"];
+var rand = Math.floor(Math.random() * images.length);
+var randomImage = images[rand];
+
+const patEmb = new Discord.RichEmbed()
+.setColor(0xA901DB)
+.setImage(randomImage);
+const sadEmb = new Discord.RichEmbed()
+.setColor(0xA901DB)
+.setImage('https://media.giphy.com/media/Y4z9olnoVl5QI/giphy.gif');
+if(!args[0]) {
+  message.channel.send(`<@${message.author.id}> pat <@${message.author.id}>.. Oh wait! You can't pat yourself!`, {embed: sadEmb});
+  return;
+}
+
+if (!message.mentions.users.first()) return message.channel.send(`Please mention someone!`).then(msg => {
+    msg.delete(3000)
+  });
+message.channel.send(`<@${message.author.id}> pat ${args[0]}`, {embed: patEmb});
+
+
+}

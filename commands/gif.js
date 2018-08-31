@@ -1,29 +1,23 @@
 const Discord = require("discord.js");
 const gifSearch = require("gif-search");
+const PREFIX = "^";
 
-
-module.exports.run = (bot, message, args, ops, PREFIX) => {
- 
+exports.run = (bot, message, args) => {
+  if (message.author.bot) return;
+  if (message.channel.type == "dm") return;
 
     if (!args[0]) return message.channel.send("`"+PREFIX+"gif <gname>`");
 
-    gifSearch.query(args[0]).then(
+    gifSearch.random(args[0]).then(
         gifUrl => {
+
         let randomcolor = ((1 << 24) * Math.random() | 0).toString(16) //Optional
         var embed = new Discord.RichEmbed()
             .setColor(`#${randomcolor}`)
-            .setTimestamp() 
             .setImage(gifUrl)
-            .setFooter(`Requested by: ${message.author.tag}`);
-        message.channel.send(embed);
+        message.author.send(embed);
     });
 
-    
+    message.channel.send(`<@${message.author.id}> **check your dm!** :postbox:`);
 
 }
-
-module.exports.help = { 
-name: "gif", 
-description: "", 
-usage: ""
-} 
