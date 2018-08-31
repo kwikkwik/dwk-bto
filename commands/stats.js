@@ -70,21 +70,17 @@ exports.run = async (client, message, args, tools, map) => {
      let postMsg = await message.channel.send("**Please Wait...**");
      const embed = new Discord.RichEmbed()
     .setColor("#06238B")
-    .setAuthor(`${client.user.username} | Bot Info`,`https://cdn.discordapp.com/avatars/464511870993432578/30a3f8c3f24bf6c066c4cee279626bb5.png?size=2048`)
-    .setTitle("Invite me!") // TITLE
-    .setURL('https://discordapp.com/oauth2/authorize?client_id=464511870993432578&scope=bot&permissions=2146958591') // THIS WILL SET THE TITLE URL TO "www.google.com" 
+    .setAuthor(`${client.user.username} | Stats`,`https://cdn.discordapp.com/avatars/464511870993432578/30a3f8c3f24bf6c066c4cee279626bb5.png?size=2048`) 
     .setThumbnail('https://cdn.discordapp.com/avatars/464511870993432578/30a3f8c3f24bf6c066c4cee279626bb5.png?size=2048')
-    .setDescription("Master bot | Stats")
     .addField("Name", `__**${client.user.username}**__`, true)
     .addField("Creator", "`Brickmaster#2000`", true)
     .addField("Library: ", `discord.js${arch}`, true)
-    .addField("Shard", `${client.shard.count} Shards\nShard Stats: ${shardStats}`)
+    .addField("Shard", `${client.shard.count} Shards\nShard Stats: ${shardStats}`, true)
     .addField("General Stats", `Guild: ${guilds}\nUser: ${users}\nVoice Channels: ${voiceChannels}\nText Channels: ${textChannels}`, true)
     .addField("Usage Information", `Ram: ${Math.round(used * 100) / 100}MB\nMemory: ${memory_on_bot} MB\nCPU: ${Math.round(ccpu * 100) / 100}%`, true)
     .addField("Uptime: ", `Days: ${d} | Hours: ${h} | Minutes: ${m} | Seconds: ${realTotalSecs}`, true)
     .addField("Created Date", `${moment.utc(client.user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
-    .addField("__**Vote this bot**__","[Vote](https://discordbots.org/bot/464511870993432578/vote)", true)
-    .addField("__**Join Official Discord**__","[Join](https://discord.gg/JYwQVjT)", true)
+    .addField("__**Usefull Links**__","[Invite](https://discordapp.com/oauth2/authorize?client_id=464511870993432578&scope=bot&permissions=2146958591) | [Vote](https://discordbots.org/bot/464511870993432578/vote) | [Support Server](https://discord.gg/JYwQVjT) | [Website](http://masterbot.esy.es)", false)
     .setFooter(`© MasterBotTeam`)
     .setTimestamp() // SHOWS THE TIME OF THE EMBED CREATED
            setTimeout(() => {
