@@ -88,9 +88,8 @@ exports.run = async (client, message, args, tools, map) => {
     .addField("__**Join Official Discord**__","[Join](https://discord.gg/JYwQVjT)", true)
     .setFooter(`© MasterBotTeam`)
     .setTimestamp() // SHOWS THE TIME OF THE EMBED CREATED
-    message.channel.send({embed})
            setTimeout(() => {
-         postMsg.edit(info)
+         postMsg.edit(embed)
           }, 1000);
 }
 }
