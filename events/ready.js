@@ -8,7 +8,7 @@ exports.run = async (bot) => {
       users = users.reduce((sum, val) => sum + val, 0);
     }
        setInterval(() => {
-    let status = [`${results.reduce((prev, val) => prev + val, 0)} Guilds!`,`${users} Users!`]
+    let status = [`${users} Users!`]
     let random = Math.floor(Math.random() * status.length)
     bot.user.setActivity(status[random]);
   }, 13000);
