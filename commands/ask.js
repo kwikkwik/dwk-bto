@@ -33,5 +33,5 @@ postMsg.edit(ballembed)
 module.exports.help = { 
 name: "8ball", 
 description: "ask shometing and bot will answer it", 
-usage: "mn!ask <message>"
+usage: "(p)ask <message>"
 } 

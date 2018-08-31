@@ -26,6 +26,6 @@ return;
 module.exports.help = { 
 name: "asciify", 
 description: "unik text", 
-usage: "mn!asciify <text>"
+usage: "(p)asciify <text>"
 } 
 }
