@@ -92,4 +92,3 @@ exports.run = async (client, message, args, tools, map) => {
          postMsg.edit(embed)
           }, 1000);
 }
-}
