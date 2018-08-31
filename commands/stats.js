@@ -74,7 +74,7 @@ exports.run = async (client, message, args, tools, map) => {
     .setThumbnail('https://cdn.discordapp.com/avatars/464511870993432578/30a3f8c3f24bf6c066c4cee279626bb5.png?size=2048')
     .addField("Name", `__**${client.user.username}**__`, true)
     .addField("Creator", "`Brickmaster#2000`", true)
-    .addField("Library: ", `discord.js${arch}`, true)
+    .addField("Library: ", `discord.js`, true)
     .addField("Shard", `${client.shard.count} Shards\nShard Stats: ${shardStats}`, true)
     .addField("General Stats", `Guild: ${guilds}\nUser: ${users}\nVoice Channels: ${voiceChannels}\nText Channels: ${textChannels}`, true)
     .addField("Usage Information", `Ram: ${Math.round(used * 100) / 100}MB\nMemory: ${memory_on_bot} MB\nCPU: ${Math.round(ccpu * 100) / 100}%`, true)
