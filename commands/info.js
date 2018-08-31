@@ -8,6 +8,8 @@ exports.run = async (client, message, args, tools, map) => {
       const os = require('os');
     const arch = os.arch()
     const used = process.memoryUsage().heapUsed / 1024 / 1024;
+    const ccpu = process.cpuUsage().system / 1024 / 1024;
+    const memory_on_bot = (process.memoryUsage().rss / 1024 / 1024).toFixed(2)
 
     let totalSeconds = process.uptime();
     let realTotalSecs = Math.floor(totalSeconds % 60);
@@ -31,17 +33,12 @@ if (message.channel.type === 'dm') return;
     .setThumbnail('https://cdn.discordapp.com/avatars/464511870993432578/30a3f8c3f24bf6c066c4cee279626bb5.png?size=2048')
     .setDescription("Bot Info!")
     .addField("Name", `__**${client.user.username}**__`, true)
-    .addField("Developer", "`_Brickmaster_#0218`", true)
-    .addField("Server Joined", `${client.guilds.size}`, true)
-    .addField("Channels", `${client.channels.size}`, true)
-    .addField("Platform: ", `${os.platform}`, true)
-    .addField("System", `${arch}`, true)
-    .addField("Users", `${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`, true)
+    .addField("Developer", "`Brickmaster#2000`", true)
     .addField("Library: ", "discord.js", true)
-    .addField("Node: ", `${process.version}`, true)
-    .addField("Ram Usage", `${Math.round(used * 100) / 100}MB`, true)
+    .addField("Shard", `${client.shard.count} Shards`)
+    .addField("General Stats", `Guild: ${cllient.guilds.size}\n User: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\nChannel: ${client.channels.size}`, true)
+    .addField("Usage Information", `Ram: ${Math.round(used * 100) / 100}MB\nMemory: ${memory_on_bot} MB\nCPU: ${Math.round(ccpu * 100) / 100}%`)
     .addField("Uptime: ", `Days: ${days} | Hours: ${hours} | Minutes: ${mins} | Seconds: ${realTotalSecs}`, true)
-    .addField("Created Date", `${moment.utc(client.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
     .addBlankField()
     .addField("__**Vote this bot**__","[Vote](https://discordbots.org/bot/464511870993432578/vote)", true)
     .addField("__**Join Official Discord**__","[Join](https://discord.gg/JYwQVjT)", true)
