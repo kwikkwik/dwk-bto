@@ -13,9 +13,9 @@ exports.run = async (client, message, args, tools, map) => {
 
     let totalSeconds = process.uptime();
     let realTotalSecs = Math.floor(totalSeconds % 60);
-    let days = Math.floor((totalSeconds % 31536000) / 86400);
-    let hours = Math.floor((totalSeconds / 3600) % 24);
-    let mins = Math.floor((totalSeconds / 60) % 60);
+    let d = Math.floor((totalSeconds % 31536000) / 86400);
+    let h = Math.floor((totalSeconds / 3600) % 24);
+    let m = Math.floor((totalSeconds / 60) % 60);
       let guilds = client.shard ? await client.shard.broadcastEval('this.guilds.size') : client.guilds.size;
     if (guilds instanceof Array) {
       guilds = guilds.reduce((sum, val) => sum + val, 0);
@@ -83,7 +83,7 @@ if (message.channel.type === 'dm') return;
     .addField("Shard", `${client.shard.count} Shards\nShard Stats: ${shardStats}`)
     .addField("General Stats", `Guild: ${guilds}\nUser: ${users}\nVoice Channels: ${voiceChannels}\nText Channels: ${textChannels}`, true)
     .addField("Usage Information", `Ram: ${Math.round(used * 100) / 100}MB\nMemory: ${memory_on_bot} MB\nCPU: ${Math.round(ccpu * 100) / 100}%`, true)
-    .addField("Uptime: ", `Days: ${days} | Hours: ${hours} | Minutes: ${mins} | Seconds: ${realTotalSecs}`, true)
+    .addField("Uptime: ", `Days: ${d} | Hours: ${h} | Minutes: ${m} | Seconds: ${realTotalSecs}`, true)
     .addBlankField()
     .addField("__**Vote this bot**__","[Vote](https://discordbots.org/bot/464511870993432578/vote)", true)
     .addField("__**Join Official Discord**__","[Join](https://discord.gg/JYwQVjT)", true)
