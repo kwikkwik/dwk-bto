@@ -25,7 +25,9 @@ exports.run = async (client, message, args, tools, map) => {
     talkedRecently.delete(message.author.id);
   }, 7000);
 if (message.channel.type === 'dm') return;
-    const embed = new Discord.RichEmbed()
+  bot.shard.fetchClientValues('guilds.size')
+  .then(results => {
+     const embed = new Discord.RichEmbed()
     .setColor("#06238B")
     .setAuthor(`${client.user.username} | Bot Info`,`https://cdn.discordapp.com/avatars/464511870993432578/30a3f8c3f24bf6c066c4cee279626bb5.png?size=2048`)
     .setTitle("Invite me!") // TITLE
@@ -45,5 +47,6 @@ if (message.channel.type === 'dm') return;
     .setFooter(`© MasterBotTeam`)
     .setTimestamp() // SHOWS THE TIME OF THE EMBED CREATED
     message.channel.send({embed})
+  })
     message.react("✅")
 }
