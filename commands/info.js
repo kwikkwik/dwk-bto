@@ -20,6 +20,18 @@ exports.run = async (client, message, args, tools, map) => {
     if (guilds instanceof Array) {
       guilds = guilds.reduce((sum, val) => sum + val, 0);
     }
+        let users = client.shard ? await client.shard.broadcastEval('this.users.size') : client.users.size;
+    if (users instanceof Array) {
+      users = users.reduce((sum, val) => sum + val, 0);
+    }
+      let textChannels = client.shard ? await client.shard.broadcastEval('this.channels.filter(channel => channel.type === \'text\').size') : client.channels.filter(channel => channel.type === 'text').size;
+    if (textChannels instanceof Array) {
+      textChannels = textChannels.reduce((sum, val) => sum + val, 0);
+    }
+      let voiceChannels = client.shard ? await client.shard.broadcastEval('this.channels.filter(channel => channel.type === \'voice\').size') : client.channels.filter(channel => channel.type === 'voice').size;
+    if (voiceChannels instanceof Array) {
+      voiceChannels = voiceChannels.reduce((sum, val) => sum + val, 0);
+    }
   
       if (message.channel.type === 'dm') return;
     if (talkedRecently.has(message.author.id))
@@ -42,7 +54,7 @@ if (message.channel.type === 'dm') return;
     .addField("Developer", "`Brickmaster#2000`", true)
     .addField("Library: ", "discord.js", true)
     .addField("Shard", `${client.shard.count} Shards`)
-    .addField("General Stats", `Guild: ${guilds} total guilds\n User: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\nChannel: ${client.channels.size}`, true)
+    .addField("General Stats", `Guild: ${guilds}\nUser: ${users}\nVoice Channels: ${voiceChannels}\nText Channels: ${textChannels}`, true)
     .addField("Usage Information", `Ram: ${Math.round(used * 100) / 100}MB\nMemory: ${memory_on_bot} MB\nCPU: ${Math.round(ccpu * 100) / 100}%`, true)
     .addField("Uptime: ", `Days: ${days} | Hours: ${hours} | Minutes: ${mins} | Seconds: ${realTotalSecs}`, true)
     .addBlankField()
