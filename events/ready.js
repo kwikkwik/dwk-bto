@@ -7,8 +7,6 @@ exports.run = async (bot) => {
     if (users instanceof Array) {
       users = users.reduce((sum, val) => sum + val, 0);
     }
-      bot.shard.fetchClientValues('guilds.size')
-  .then(results => {
        setInterval(() => {
     let status = [`${results.reduce((prev, val) => prev + val, 0)} Guilds!`,`${users} Users!`]
     let random = Math.floor(Math.random() * status.length)
@@ -16,4 +14,3 @@ exports.run = async (bot) => {
   }, 13000);
   console.log(`${bot.user.username} Sudah online beb`);
 };
-  })
