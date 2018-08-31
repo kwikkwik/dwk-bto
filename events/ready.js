@@ -7,11 +7,11 @@ exports.run = async (bot) => {
     if (users instanceof Array) {
       users = users.reduce((sum, val) => sum + val, 0);
     }
-  bot.user.setActivity('WATCHING');
+  bot.user.setActivity(`${users} user`);
   setInterval(() => {
-    let status = [`Master Bot`,`${guilds} Guilds!`,`${users} Users!`]
+    let status = [`${guilds} Guilds!`,`${users} Users!`]
     let random = Math.floor(Math.random() * status.length)
     bot.user.setActivity(status[random]);
-  }, 20000);
+  }, 13000);
   console.log(`${bot.user.username} Sudah online beb`);
 };
