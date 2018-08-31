@@ -16,6 +16,10 @@ exports.run = async (client, message, args, tools, map) => {
     let days = Math.floor((totalSeconds % 31536000) / 86400);
     let hours = Math.floor((totalSeconds / 3600) % 24);
     let mins = Math.floor((totalSeconds / 60) % 60);
+      let guilds = client.shard ? await client.shard.broadcastEval('this.guilds.size') : client.guilds.size;
+    if (guilds instanceof Array) {
+      guilds = guilds.reduce((sum, val) => sum + val, 0);
+    }
   
       if (message.channel.type === 'dm') return;
     if (talkedRecently.has(message.author.id))
@@ -38,7 +42,7 @@ if (message.channel.type === 'dm') return;
     .addField("Developer", "`Brickmaster#2000`", true)
     .addField("Library: ", "discord.js", true)
     .addField("Shard", `${client.shard.count} Shards`)
-    .addField("General Stats", `Guild: ${client.guilds.size}\n User: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\nChannel: ${client.channels.size}`, true)
+    .addField("General Stats", `Guild: ${guilds} total guilds\n User: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\nChannel: ${client.channels.size}`, true)
     .addField("Usage Information", `Ram: ${Math.round(used * 100) / 100}MB\nMemory: ${memory_on_bot} MB\nCPU: ${Math.round(ccpu * 100) / 100}%`, true)
     .addField("Uptime: ", `Days: ${days} | Hours: ${hours} | Minutes: ${mins} | Seconds: ${realTotalSecs}`, true)
     .addBlankField()
