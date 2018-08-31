@@ -84,6 +84,7 @@ if (message.channel.type === 'dm') return;
     .addField("General Stats", `Guild: ${guilds}\nUser: ${users}\nVoice Channels: ${voiceChannels}\nText Channels: ${textChannels}`, true)
     .addField("Usage Information", `Ram: ${Math.round(used * 100) / 100}MB\nMemory: ${memory_on_bot} MB\nCPU: ${Math.round(ccpu * 100) / 100}%`, true)
     .addField("Uptime: ", `Days: ${d} | Hours: ${h} | Minutes: ${m} | Seconds: ${realTotalSecs}`, true)
+    .addField("Created Date", `${moment.utc(client.user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
     .addBlankField()
     .addField("__**Vote this bot**__","[Vote](https://discordbots.org/bot/464511870993432578/vote)", true)
     .addField("__**Join Official Discord**__","[Join](https://discord.gg/JYwQVjT)", true)
