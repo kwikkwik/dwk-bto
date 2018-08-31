@@ -81,7 +81,7 @@ if (message.channel.type === 'dm') return;
     .addField("Developer", "`Brickmaster#2000`", true)
     .addField("Library: ", "discord.js", true)
     .addField("Shard", `${client.shard.count} Shards\nShard Stats: ${shardStats}`)
-    .addField("General Stats", `Guild: ${guilds}\nUser: ${users}\nVoice Channels: ${voiceChannels}\nText Channels: ${textChannels}`, true)
+    .addField("General Stats", `Guild: ${guilds.toHumanString()} Servers\n\nUser: ${users.toHumanString()}\nVoice Channels: ${voiceChannels.toHumanString()}\nText Channels: ${textChannels.toHumanString()}`, true)
     .addField("Usage Information", `Ram: ${Math.round(used * 100) / 100}MB\nMemory: ${memory_on_bot} MB\nCPU: ${Math.round(ccpu * 100) / 100}%`, true)
     .addField("Uptime: ", `Days: ${d} | Hours: ${h} | Minutes: ${m} | Seconds: ${realTotalSecs}`, true)
     .addField("Created Date", `${moment.utc(client.user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
