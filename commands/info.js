@@ -36,7 +36,7 @@ if (message.channel.type === 'dm') return;
     .addField("Developer", "`Brickmaster#2000`", true)
     .addField("Library: ", "discord.js", true)
     .addField("Shard", `${client.shard.count} Shards`)
-    .addField("General Stats", `Guild: ${cllient.guilds.size}\n User: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\nChannel: ${client.channels.size}`, true)
+    .addField("General Stats", `Guild: ${client.guilds.size}\n User: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\nChannel: ${client.channels.size}`, true)
     .addField("Usage Information", `Ram: ${Math.round(used * 100) / 100}MB\nMemory: ${memory_on_bot} MB\nCPU: ${Math.round(ccpu * 100) / 100}%`)
     .addField("Uptime: ", `Days: ${days} | Hours: ${hours} | Minutes: ${mins} | Seconds: ${realTotalSecs}`, true)
     .addBlankField()
